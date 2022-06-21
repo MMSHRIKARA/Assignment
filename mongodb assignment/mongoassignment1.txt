@@ -306,3 +306,189 @@ Atlas atlas-12pcvr-shard-0 [primary] test> db.users.insertOne({username:"GoodGuy
   acknowledged: true,
   insertedId: ObjectId("62b19e61a691a5fea8501336")
 }
+Atlas atlas-12pcvr-shard-0 [primary] test> db.users.insertOne({username:"ScumbagSteve",full_name:{first_name:"Good Guy",last_name:"Greg"}})
+{
+  acknowledged: true,
+  insertedId: ObjectId("62b1c851a691a5fea8501337")
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.posts.insertOne({username:"GoodGuyGreg",title:"Passes out at party",body:"Wakes up early and cleans house"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("62b1c866a691a5fea8501338")
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.posts.insertOne({username : "GoodGuyGreg", title :" Steals your identity", body :" Raises your credit score"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("62b1c879a691a5fea8501339")
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.posts.insertOne({username : "GoodGuyGreg", title :" Reports a bug in your code", body : "Sends you a Pull Request"}
+...
+...
+Atlas atlas-12pcvr-shard-0 [primary] test> db.posts.insertOne({username : "GoodGuyGreg", title :" Reports a bug in your code", body : "Sends you a Pull Request"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("62b1c92da691a5fea850133a")
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.posts.insertOne({username : "ScumbagSteve", title :" Borrows something", body : "Sells it"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("62b1c946a691a5fea850133b")
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.comments.insertOne({
+... username : "ScumbagSteve",
+...  comment : "It still isn't clean",
+... post : ObjectId("5ffd639e651aea3558f541eb")
+... })
+{
+  acknowledged: true,
+  insertedId: ObjectId("62b1cd10037c489edea65d80")
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.comments.insertOne({
+... username : "ScumbagSteve",
+...  comment : "Denied your PR cause I found a hack",
+...   post :ObjectId("5ffd644c651aea3558f541ed")
+... })
+{
+  acknowledged: true,
+  insertedId: ObjectId("62b1cd23037c489edea65d81")
+}
+Atlas atlas-12pcvr-shard-0 [primary] test> db.users.find()
+[
+  {
+    _id: ObjectId("62b19e61a691a5fea8501336"),
+    username: 'GoodGuyGreg',
+    first_name: 'Good Guy',
+    last_name: 'Greg'
+  },
+  {
+    _id: ObjectId("62b1c851a691a5fea8501337"),
+    username: 'ScumbagSteve',
+    full_name: { first_name: 'Good Guy', last_name: 'Greg' }
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.posts.find({username:"GoodGuyGreg"})
+[
+  {
+    _id: ObjectId("62b1c866a691a5fea8501338"),
+    username: 'GoodGuyGreg',
+    title: 'Passes out at party',
+    body: 'Wakes up early and cleans house'
+  },
+  {
+    _id: ObjectId("62b1c879a691a5fea8501339"),
+    username: 'GoodGuyGreg',
+    title: ' Steals your identity',
+    body: ' Raises your credit score'
+  },
+  {
+    _id: ObjectId("62b1c92da691a5fea850133a"),
+    username: 'GoodGuyGreg',
+    title: ' Reports a bug in your code',
+    body: 'Sends you a Pull Request'
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.posts.find({username: "ScumbagSteve"})
+[
+  {
+    _id: ObjectId("62b1c946a691a5fea850133b"),
+    username: 'ScumbagSteve',
+    title: ' Borrows something',
+    body: 'Sells it'
+  },
+  {
+    _id: ObjectId("62b1ca0da691a5fea850133c"),
+    username: 'ScumbagSteve',
+    title: 'Borrows everything',
+    body: 'The end'
+  },
+  {
+    _id: ObjectId("62b1cb8cc72be3af2fc3138f"),
+    username: 'ScumbagSteve',
+    title: 'Borrows everything',
+    body: 'The end'
+  },
+  {
+    _id: ObjectId("62b1cb9fc72be3af2fc31390"),
+    username: 'ScumbagSteve',
+    title: ' Forks your repo on github',
+    body: 'Sets to private'
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.comments.find()
+[
+  {
+    _id: ObjectId("62b1cbd9c72be3af2fc31391"),
+    username: 'GoodGuyGreg',
+    comment: 'Hope you got a good deal!',
+    post: ObjectId("5ffd648b651aea3558f541ee")
+  },
+  {
+    _id: ObjectId("62b1cbe5c72be3af2fc31392"),
+    username: 'GoodGuyGreg',
+    comment: "What's mine is yours!",
+    post: ObjectId("5ffd64c6651aea3558f541ef")
+  },
+  {
+    _id: ObjectId("62b1cbfac72be3af2fc31393"),
+    username: 'GoodGuyGreg',
+    comment: "Don't violate the licensing agreement!",
+    post: ObjectId("5ffd64f9651aea3558f541f0")
+  },
+  {
+    _id: ObjectId("62b1cd10037c489edea65d80"),
+    username: 'ScumbagSteve',
+    comment: "It still isn't clean",
+    post: ObjectId("5ffd639e651aea3558f541eb")
+  },
+  {
+    _id: ObjectId("62b1cd23037c489edea65d81"),
+    username: 'ScumbagSteve',
+    comment: 'Denied your PR cause I found a hack',
+    post: ObjectId("5ffd644c651aea3558f541ed")
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.comments.find({username:"GoodGuyGreg"})
+[
+  {
+    _id: ObjectId("62b1cbd9c72be3af2fc31391"),
+    username: 'GoodGuyGreg',
+    comment: 'Hope you got a good deal!',
+    post: ObjectId("5ffd648b651aea3558f541ee")
+  },
+  {
+    _id: ObjectId("62b1cbe5c72be3af2fc31392"),
+    username: 'GoodGuyGreg',
+    comment: "What's mine is yours!",
+    post: ObjectId("5ffd64c6651aea3558f541ef")
+  },
+  {
+    _id: ObjectId("62b1cbfac72be3af2fc31393"),
+    username: 'GoodGuyGreg',
+    comment: "Don't violate the licensing agreement!",
+    post: ObjectId("5ffd64f9651aea3558f541f0")
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.comments.find({username:"ScumbagSteve"})
+[
+  {
+    _id: ObjectId("62b1cd10037c489edea65d80"),
+    username: 'ScumbagSteve',
+    comment: "It still isn't clean",
+    post: ObjectId("5ffd639e651aea3558f541eb")
+  },
+  {
+    _id: ObjectId("62b1cd23037c489edea65d81"),
+    username: 'ScumbagSteve',
+    comment: 'Denied your PR cause I found a hack',
+    post: ObjectId("5ffd644c651aea3558f541ed")
+  }
+]
+Atlas atlas-12pcvr-shard-0 [primary] test> db.comments.find({post:ObjectId("5ffd644c651aea3558f541ed")})
+[
+  {
+    _id: ObjectId("62b1cd23037c489edea65d81"),
+    username: 'ScumbagSteve',
+    comment: 'Denied your PR cause I found a hack',
+    post: ObjectId("5ffd644c651aea3558f541ed")
+  }
+]
