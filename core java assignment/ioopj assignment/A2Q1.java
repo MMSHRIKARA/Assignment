@@ -1,4 +1,4 @@
-package capg.ioopj.assignment;
+package capg.ioopj.assignment2;
 
 public class A2Q1 {
     public static void main(String[] args) {

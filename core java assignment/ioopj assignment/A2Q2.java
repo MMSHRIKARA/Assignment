@@ -1,4 +1,4 @@
-package capg.ioopj.assignment;
+package capg.ioopj.assignment2;
 
 abstract class Employee{
 abstract public void salary();
