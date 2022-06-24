@@ -17,8 +17,7 @@ class Login{
 }
 public class A1Q6 {
     public static void main(String[] args) {
-        // creating the object/ reference variable of class login
-
+        
         Login login = new Login();
 
         String userId,password;
@@ -34,7 +33,6 @@ public class A1Q6 {
             System.out.println("Enter password");
             password = sc.next();
 
-            //Calling the login user of Login class
             String res = login.loginUser(userId, password);
             if(res.equals("yes")){
                 System.out.println("Welcome "+userId);

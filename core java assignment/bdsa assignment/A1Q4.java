@@ -31,12 +31,10 @@ public class A1Q4 {
         System.out.println("enter the marks of subject 3: ");
         subject3Marks = sc.nextDouble();
 
-        //Creating the reference variable for resultDeclaration class
-
         ResultDeclaration resultDeclaration = new ResultDeclaration();
         System.out.println(resultDeclaration.declareResults(subject1Marks,subject2Marks,subject3Marks));
 
-        //System.out.println(result);
+        
 
 
 

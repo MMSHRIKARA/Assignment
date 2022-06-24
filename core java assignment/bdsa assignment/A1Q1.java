@@ -10,7 +10,7 @@ class ArmstrongOrNot {
             d++;
             n = n/10;
         }
-        //System.out.println(d);
+        
         int n1 = num;
         int arm =0;
         while(n1>0){

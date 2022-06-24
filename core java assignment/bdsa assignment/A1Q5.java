@@ -27,8 +27,6 @@ public class A1Q5 {
         System.out.println("Enter your CTC: ");
         ctc = sc.nextInt();
 
-        // Creating the reference variable for TaxAmount class to invoke the calculateTaxAmount method
-
         TaxAmount taxAmount = new TaxAmount();
         double tax;
         tax = taxAmount.calculateTaxAmount(ctc);
